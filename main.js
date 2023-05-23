@@ -1,6 +1,6 @@
 const { MongoClient } = require ("mongodb")
 
-const CONN_STR = 'mongodb+srv://primalmontage:3PGF44ZM3N@cluster0.7qxlejr.mongodb.net/admin?retryWrites=true&replicaSet=atlas-tcnltt-shard-0&readPreference=primary&srvServiceName=mongodb&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1'
+const CONN_STR = 'mongodb+srv://sunshinemocha:DpqKByxiAWpYXvfD@cluster0.dl5kklx.mongodb.net/?retryWrites=true&w=majority'
 
 const client = new MongoClient(CONN_STR)
 
@@ -23,11 +23,11 @@ const client = new MongoClient(CONN_STR)
 
     const database = client.db("francesco");
 
-    const movies = database.collection('zaino');
+    const zaino = database.collection('zaino');
 
     const query = {colore: 'blu'};
 
-    zaini.findOne(query)
+    zaino.findOne(query)
     .then(element => console.log(element))
     .catch(err => console.log(err))
     .finally(()=> client.close())
